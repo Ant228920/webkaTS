@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Library App</title>
+    <link rel="stylesheet" href="libs/bootstrap.css">
+</head>
+<body class="container mt-4">
+<h1 class="text-center mb-4">📚 Library Management</h1>
+
+<!-- Форма додавання книги -->
+<form id="bookForm">
+    <div class="mb-3">
+        <label for="title" class="form-label">Назва книги</label>
+        <input type="text" id="title" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label for="author" class="form-label">Автор</label>
+        <input type="text" id="author" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label for="year" class="form-label">Рік</label>
+        <input type="number" id="year" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Додати книгу</button>
+</form>
+
+
+<!-- Форма додавання користувача -->
+<div class="card p-3 mb-4">
+    <h3>Додати користувача</h3>
+    <form id="userForm">
+        <div class="mb-2">
+            <input class="form-control" type="number" id="userId" placeholder="ID користувача" required>
+        </div>
+        <div class="mb-2">
+            <input class="form-control" type="text" id="userName" placeholder="Ім'я користувача" required>
+        </div>
+        <button class="btn btn-success w-100">Додати користувача</button>
+    </form>
+</div>
+
+<!-- Список книг -->
+<div class="card p-3 mb-4">
+    <h3>Список книг</h3>
+    <ul id="bookList" class="list-group"></ul>
+</div>
+
+<!-- Список користувачів -->
+<div class="card p-3 mb-4">
+    <h3>Список користувачів</h3>
+    <ul id="userList" class="list-group"></ul>
+</div>
+
+<!-- Модальне вікно для позичання книги -->
+<div class="modal fade" id="borrowModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Позичити книгу</h5>
+                <button type="button" class="btn-close closeBorrowModal" data-bs-dismiss="modal" aria-label="Закрити"></button>
+            </div>
+            <div class="modal-body">
+                <p id="borrowBookTitle" class="fw-bold mb-3"></p>
+                <label for="modalUserId" class="form-label">ID користувача</label>
+                <input id="modalUserId" class="form-control" type="number" min="1" placeholder="Введіть ID користувача">
+                <div class="invalid-feedback">Користувач з таким ID не знайдений</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="confirmBorrow">Підтвердити</button>
+                <button type="button" class="btn btn-secondary closeBorrowModal" data-bs-dismiss="modal">Закрити</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="dist/bundle.js"></script>
+</body>
+</html>

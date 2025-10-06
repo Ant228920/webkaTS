@@ -1,0 +1,15 @@
+var number1 = 1;
+var number2 = 2;
+var number3 = 3;
+var word1 = "some";
+var word2 = "good";
+var bool = false;
+var names = [];
+names.push(word1);
+names.push(word2);
+var numbers = [];
+numbers.push(number1);
+numbers.push(number2);
+numbers.push(number3);
+console.log(names);
+console.log(numbers);

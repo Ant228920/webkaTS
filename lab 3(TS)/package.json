@@ -7,7 +7,9 @@
     "build": "webpack",
     "start": "webpack serve --open",
     "format": "prettier --write .",
-    "format:check": "prettier --check \"src/**/*.{ts,js,json}\""
+    "format:check": "prettier --check \"src/**/*.{ts,js,json}\"",
+    "lint": "eslint \"src/**/*.{ts,js}\"",
+    "lint:fix": "eslint \"src/**/*.{ts,js}\" --fix"
   },
   "repository": {
     "type": "git",
@@ -15,12 +17,18 @@
   },
   "private": true,
   "devDependencies": {
+    "@eslint/js": "^9.37.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.0",
+    "@typescript-eslint/parser": "^8.46.0",
     "css-loader": "^7.1.2",
+    "eslint": "^9.37.0",
+    "eslint-config-prettier": "^10.1.8",
     "html-webpack-plugin": "^5.6.4",
     "prettier": "^3.6.2",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.1",
-    "typescript": "^5.5.4",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.0",
     "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0"

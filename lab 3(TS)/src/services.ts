@@ -11,7 +11,6 @@ export class LibraryService {
     this.users = new Library<User>();
   }
 
-  // ===== КНИГИ =====
   addBook(book: Book): void {
     this.books.add(book);
   }
@@ -28,7 +27,6 @@ export class LibraryService {
     this.books.remove((b) => b.id === id);
   }
 
-  // ===== КОРИСТУВАЧІ =====
   addUser(user: User): void {
     this.users.add(user);
   }
@@ -45,7 +43,6 @@ export class LibraryService {
     this.users.remove((u) => u.id === id);
   }
 
-  // ===== ПОЗИЧАННЯ / ПОВЕРНЕННЯ =====
   borrowBook(userId: number, bookId: number): string {
     const user = this.findUserById(userId);
     const book = this.findBookById(bookId);

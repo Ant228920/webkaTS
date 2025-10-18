@@ -1,6 +1,5 @@
 // src/models.ts
 
-// Інтерфейси
 export interface IBook {
   id: number;
   title: string;
@@ -15,7 +14,6 @@ export interface IUser {
   borrowedBooks: number[];
 }
 
-// Класи
 export class Book implements IBook {
   constructor(
     public id: number,

@@ -26,19 +26,16 @@ export class ModalWindow {
   }
 
   private init() {
-    // Ініціалізація Bootstrap Modal
     if ((window as any).bootstrap) {
       this.modalInstance = new (window as any).bootstrap.Modal(this.modalElement);
     }
 
-    // Обробник підтвердження
     this.confirmButton.addEventListener('click', () => {
       if (this.onConfirmCallback) {
         this.onConfirmCallback();
       }
     });
 
-    // Обробники закриття
     this.closeButtons.forEach((btn) => {
       btn.addEventListener('click', () => {
         this.hide();

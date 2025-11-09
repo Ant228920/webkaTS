@@ -1,5 +1,6 @@
 "use client";
 import { Participant } from "@/app/page";
+import Button from "@/components/Button";
 
 interface Props {
     winners: Participant[];
@@ -9,7 +10,7 @@ interface Props {
 }
 
 export default function WinnersBlock({ winners, onNewWinner, onRemove, participantsCount }: Props) {
-    const disabled = winners.length >= 3 || participantsCount === 0;
+    // const disabled = winners.length >= 3 || participantsCount === 0;
     return (
         <div className="bg-white shadow-md rounded-2xl p-6">
             <h2 className="text-xl font-semibold mb-4">Winners</h2>
@@ -17,16 +18,15 @@ export default function WinnersBlock({ winners, onNewWinner, onRemove, participa
                 {winners.map(w => (
                     <div key={w.id} className="bg-green-100 px-4 py-2 rounded-lg flex items-center gap-2">
                         <span>{w.name}</span>
-                        <button onClick={() => onRemove(w.id)} className="text-red-600 hover:underline">x</button>
+                        <Button onClick={() => onRemove(w.id)} color="danger" text={"x"}></Button>
                     </div>
                 ))}
             </div>
-            <button
+            <Button
                 onClick={onNewWinner}
-                disabled={disabled}
-                className={`px-4 py-2 rounded text-white ${disabled ? "bg-gray-400" : "bg-green-600 hover:bg-green-700"}`}>
-                New winner
-            </button>
+                color="primary"
+                text={"New winner"}>
+            </Button>
         </div>
     );
 }

@@ -1,7 +1,6 @@
 'use client'
 import React, { useState } from 'react'
 
-// Додаємо TypeScript інтерфейс для користувача
 interface User {
   firstName: string
   lastName: string
@@ -12,7 +11,6 @@ interface User {
   hobbies: string[]
 }
 
-// Додаємо TypeScript інтерфейс для пропсів компонента
 interface UserCardProps {
   user: User
 }
@@ -110,7 +108,6 @@ const users: User[] = [
   },
 ]
 
-// Виправлений компонент з типами
 const UserCard = ({ user }: UserCardProps) => {
   return (
       <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group hover:-translate-y-2 border border-gray-100">

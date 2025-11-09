@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Participant } from "@/app/page";
+import InputField from "@/components/InputField";
 
 interface Props {
     onAdd: (p: Participant) => void;
@@ -32,19 +33,19 @@ export default function RegistrationForm({ onAdd }: Props) {
     return (
         <form onSubmit={handleSubmit} className="bg-white shadow-md rounded-2xl p-6 space-y-4">
             <h2 className="text-xl font-semibold">Register new participant</h2>
-            <input className="border p-2 w-full rounded" placeholder="Name"
+            <InputField  label="Name" placeholder="Name"
                    value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
             {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
 
-            <input className="border p-2 w-full rounded" placeholder="Email"
+            <InputField label="Email" placeholder="Email"
                    value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} />
             {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
 
-            <input className="border p-2 w-full rounded" placeholder="Phone"
+            <InputField label="Phone" placeholder="Phone"
                    value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} />
             {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
 
-            <input type="date" className="border p-2 w-full rounded"
+            <InputField type="date" label="Date"
                    value={form.birthDate} onChange={e => setForm({ ...form, birthDate: e.target.value })} />
             {errors.birthDate && <p className="text-red-500 text-sm">{errors.birthDate}</p>}
 
